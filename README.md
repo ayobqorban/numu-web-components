@@ -4,12 +4,14 @@
 
 ## Status
 
-The foundation is experimental. Public block keys and schema versions are persistent contracts, but the package has not been published.
+The foundation is experimental. Public block keys and schema versions are persistent contracts. Releases are private and are published to GitHub Packages from signed-off GitHub Releases.
 
 ## Install
 
+Configure the private `@numu` scope (copy `.npmrc.example`, but never commit a token), then install an exact version:
+
 ```bash
-npm install @numu/web-components react react-dom
+NODE_AUTH_TOKEN=<token-with-read-packages> npm install @numu/web-components@0.1.0 react react-dom
 ```
 
 Import the shared stylesheet once in the consuming application:
@@ -30,7 +32,7 @@ const result = renderWebBlock({
 });
 ```
 
-See [docs/INTEGRATION_GUIDE.md](docs/INTEGRATION_GUIDE.md) for complete integration examples and [docs/COMPONENT_REGISTRY.md](docs/COMPONENT_REGISTRY.md) for the supported contracts.
+See [docs/CONSUMER_INTEGRATION.md](docs/CONSUMER_INTEGRATION.md) for authentication and version pinning, [docs/INTEGRATION_GUIDE.md](docs/INTEGRATION_GUIDE.md) for usage examples, and [docs/COMPONENT_REGISTRY.md](docs/COMPONENT_REGISTRY.md) for supported contracts.
 
 ## Development
 
@@ -41,9 +43,10 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
+npm run test:consumer
 ```
 
-The Vite development catalog demonstrates two themes, both directions, and responsive layouts. The package is not published automatically.
+The Vite development catalog demonstrates two themes, both directions, and responsive layouts. A GitHub Release whose tag matches `v<package.json version>` runs all quality gates and publishes the private package.
 
 ## Principles
 

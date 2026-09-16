@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title description">
+  <title id="title">NUMU private package lifecycle</title>
+  <desc id="description">Four connected panels represent source, package, validation, and a Next.js website.</desc>
+  <rect width="1200" height="900" fill="#e8eef8"/>
+  <g fill="#fff" stroke="#7890b8" stroke-width="6">
+    <rect x="90" y="320" width="210" height="210" rx="28"/>
+    <rect x="360" y="320" width="210" height="210" rx="28"/>
+    <rect x="630" y="320" width="210" height="210" rx="28"/>
+    <rect x="900" y="320" width="210" height="210" rx="28"/>
+  </g>
+  <g fill="none" stroke="#1d4ed8" stroke-width="16" stroke-linecap="round">
+    <path d="M300 425h50"/>
+    <path d="M570 425h50"/>
+    <path d="M840 425h50"/>
+  </g>
+  <g fill="#172033" font-family="Arial, sans-serif" font-size="34" font-weight="700" text-anchor="middle">
+    <text x="195" y="440">Source</text>
+    <text x="465" y="440">Package</text>
+    <text x="735" y="420">Runtime</text>
+    <text x="735" y="465">Schema</text>
+    <text x="1005" y="420">Next.js</text>
+    <text x="1005" y="465">Website</text>
+  </g>
+</svg>
+

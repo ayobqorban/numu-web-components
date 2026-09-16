@@ -34,3 +34,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Verify local package in Next.js consumer
+        run: npm run test:consumer

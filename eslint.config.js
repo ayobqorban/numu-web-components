@@ -6,7 +6,20 @@ import tseslint from "typescript-eslint";
 export default tseslint.config(
   { ignores: ["dist", "coverage", "node_modules", "eslint.config.js"] },
   js.configs.recommended,
+  {
+    files: ["scripts/**/*.mjs", "examples/**/*.mjs"],
+    languageOptions: {
+      globals: {
+        console: "readonly",
+        process: "readonly"
+      }
+    }
+  },
   ...tseslint.configs.recommendedTypeChecked,
+  {
+    ...tseslint.configs.disableTypeChecked,
+    files: ["scripts/**/*.mjs", "examples/**/*.mjs"]
+  },
   {
     files: ["**/*.{ts,tsx}"],
     languageOptions: {
@@ -32,6 +45,14 @@ export default tseslint.config(
     rules: {
       "@typescript-eslint/no-unsafe-assignment": "off",
       "@typescript-eslint/no-unsafe-call": "off"
+    }
+  },
+  {
+    ...tseslint.configs.disableTypeChecked,
+    files: ["examples/**/*.{ts,tsx}"],
+    rules: {
+      ...tseslint.configs.disableTypeChecked.rules,
+      "react-refresh/only-export-components": "off"
     }
   }
 );

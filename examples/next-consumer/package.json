@@ -1,0 +1,24 @@
+{
+  "name": "@numu/next-consumer-example",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "typecheck": "tsc --noEmit",
+    "verify:registry": "node scripts/verify-registry.mjs"
+  },
+  "dependencies": {
+    "@numu/web-components": "0.1.0",
+    "next": "16.3.5",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "typescript": "^6.0.3"
+  }
+}
+
