@@ -4,6 +4,13 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/) and S
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-09-16
+
+### Changed
+
+- Align the GitHub Packages scope with the repository owner by publishing as `@ayobqorban/numu-web-components`.
+- Verify the published artifact in the isolated Next.js consumer from within the release workflow.
+
 ## [0.1.1] - 2026-09-16
 
 ### Fixed

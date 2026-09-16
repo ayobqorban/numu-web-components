@@ -20,10 +20,10 @@ The package is an independent React and TypeScript component library. Its layers
 
 Public entry points are:
 
-- `@numu/web-components`
-- `@numu/web-components/registry`
-- `@numu/web-components/theme`
-- `@numu/web-components/styles.css`
+- `@ayobqorban/numu-web-components`
+- `@ayobqorban/numu-web-components/registry`
+- `@ayobqorban/numu-web-components/theme`
+- `@ayobqorban/numu-web-components/styles.css`
 
 React and React DOM remain external peer dependencies. The library contains no package-wide client boundary and no Next.js-specific core dependency.
 

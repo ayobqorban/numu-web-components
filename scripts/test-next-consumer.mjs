@@ -11,7 +11,14 @@ if (!npmCliPath) {
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "..");
 const exampleDirectory = join(repositoryRoot, "examples", "next-consumer");
-const packageVersion = JSON.parse(readFileSync(join(repositoryRoot, "package.json"), "utf8")).version;
+const packageManifest = JSON.parse(readFileSync(join(repositoryRoot, "package.json"), "utf8"));
+const packageName = packageManifest.name;
+const packageVersion = packageManifest.version;
+if (typeof packageName !== "string" || !packageName.startsWith("@") || !packageName.includes("/")) {
+  throw new Error("The package must use a scoped npm name.");
+}
+const packageScope = packageName.split("/")[0];
+const packagePathParts = packageName.split("/");
 const temporaryRoot = mkdtempSync(join(tmpdir(), "numu-web-components-consumer-"));
 const consumerDirectory = join(temporaryRoot, "consumer");
 const usePublishedPackage = process.argv.includes("--published");
@@ -37,7 +44,7 @@ try {
   cpSync(exampleDirectory, consumerDirectory, { recursive: true });
   const consumerManifestPath = join(consumerDirectory, "package.json");
   const consumerManifest = JSON.parse(readFileSync(consumerManifestPath, "utf8"));
-  if (consumerManifest.dependencies["@numu/web-components"] !== packageVersion) {
+  if (consumerManifest.dependencies[packageName] !== packageVersion) {
     throw new Error("The consumer must pin the current package version exactly.");
   }
 
@@ -48,7 +55,7 @@ try {
     }
     writeFileSync(
       join(consumerDirectory, ".npmrc"),
-      `@numu:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${token}\nalways-auth=true\n`,
+      `${packageScope}:registry=https://npm.pkg.github.com\n//npm.pkg.github.com/:_authToken=${token}\nalways-auth=true\n`,
       { encoding: "utf8", mode: 0o600 },
     );
   } else {
@@ -61,7 +68,7 @@ try {
     const packResult = JSON.parse(packOutput);
     const filename = packResult[0]?.filename;
     if (!filename) throw new Error("npm pack did not return a tarball filename.");
-    consumerManifest.dependencies["@numu/web-components"] = `file:../${filename}`;
+    consumerManifest.dependencies[packageName] = `file:../${filename}`;
     writeFileSync(consumerManifestPath, `${JSON.stringify(consumerManifest, null, 2)}\n`, "utf8");
   }
 
@@ -69,10 +76,10 @@ try {
   run(["run", "typecheck"], consumerDirectory);
   run(["run", "verify:registry"], consumerDirectory);
   run(["run", "build"], consumerDirectory);
-  run(["ls", "@numu/web-components", "react", "react-dom"], consumerDirectory);
+  run(["ls", packageName, "react", "react-dom"], consumerDirectory);
 
   const installedManifest = JSON.parse(
-    readFileSync(join(consumerDirectory, "node_modules", "@numu", "web-components", "package.json"), "utf8"),
+    readFileSync(join(consumerDirectory, "node_modules", ...packagePathParts, "package.json"), "utf8"),
   );
   if (installedManifest.version !== packageVersion) {
     throw new Error(`Installed package version mismatch: ${installedManifest.version}`);

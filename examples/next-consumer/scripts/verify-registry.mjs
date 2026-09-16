@@ -3,7 +3,7 @@ import {
   getWebBlockDefinition,
   validateWebBlock,
   webBlockRegistry,
-} from "@numu/web-components/registry";
+} from "@ayobqorban/numu-web-components/registry";
 
 assert.equal(webBlockRegistry.length, 4, "The published registry must contain the four foundation blocks.");
 

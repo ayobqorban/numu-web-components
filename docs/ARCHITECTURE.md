@@ -2,7 +2,7 @@
 
 ## Purpose
 
-`@numu/web-components` is an independent React and TypeScript library shared by NUMU Admin preview surfaces and company websites. The same implementation renders editor previews and production output.
+`@ayobqorban/numu-web-components` is an independent React and TypeScript library shared by NUMU Admin preview surfaces and company websites. The same implementation renders editor previews and production output.
 
 ## Ownership boundary
 
@@ -36,10 +36,10 @@ React and React DOM are peer dependencies. Components are ordinary React compone
 
 ## Public entry points
 
-- `@numu/web-components`: components, contracts, and common utilities.
-- `@numu/web-components/registry`: registry and rendering APIs.
-- `@numu/web-components/theme`: theme helpers and token types.
-- `@numu/web-components/styles.css`: required component and default-theme styles.
+- `@ayobqorban/numu-web-components`: components, contracts, and common utilities.
+- `@ayobqorban/numu-web-components/registry`: registry and rendering APIs.
+- `@ayobqorban/numu-web-components/theme`: theme helpers and token types.
+- `@ayobqorban/numu-web-components/styles.css`: required component and default-theme styles.
 
 ## Distribution boundary
 

@@ -1,6 +1,6 @@
 {
-  "name": "@numu/web-components",
-  "version": "0.1.1",
+  "name": "@ayobqorban/numu-web-components",
+  "version": "0.1.2",
   "description": "Shared, themeable and runtime-validated React website blocks for NUMU.",
   "repository": {
     "type": "git",

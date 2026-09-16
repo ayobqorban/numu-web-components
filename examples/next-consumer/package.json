@@ -9,7 +9,7 @@
     "verify:registry": "node scripts/verify-registry.mjs"
   },
   "dependencies": {
-    "@numu/web-components": "0.1.1",
+    "@ayobqorban/numu-web-components": "0.1.2",
     "next": "16.3.5",
     "react": "19.2.4",
     "react-dom": "19.2.4"

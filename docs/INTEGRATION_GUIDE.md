@@ -11,8 +11,8 @@ Import the registry to list available blocks, use localized metadata and default
 Fetch page JSON in the website application, validate each envelope, render through the registry, and apply company CSS tokens on the page root. The website controls ordering, locale, direction, routing, data fetching, error logging, and publishing.
 
 ```tsx
-import { renderWebBlock } from "@numu/web-components/registry";
-import "@numu/web-components/styles.css";
+import { renderWebBlock } from "@ayobqorban/numu-web-components/registry";
+import "@ayobqorban/numu-web-components/styles.css";
 
 export function Page({ blocks }: { blocks: unknown[] }) {
   return blocks.map((block, index) => {

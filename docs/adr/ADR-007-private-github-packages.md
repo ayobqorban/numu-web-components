@@ -9,7 +9,7 @@ NUMU Admin and independent company websites need reproducible access to the same
 
 ## Decision
 
-Publish `@numu/web-components` privately to GitHub Packages. Pushing a tag matching `v<package.json version>` triggers a workflow that validates, tests, packs, and publishes with its ephemeral `GITHUB_TOKEN`; a GitHub Release records the successfully published tag. A tag event is required because release-event workflows are loaded from the default branch, while package work is intentionally integrated through `develop`. Consumers authenticate with least-privilege `read:packages` tokens and pin exact versions.
+Publish `@ayobqorban/numu-web-components` privately to GitHub Packages. The npm scope matches the GitHub repository owner as required by the registry. Pushing a tag matching `v<package.json version>` triggers a workflow that validates, tests, packs, publishes with its ephemeral `GITHUB_TOKEN`, and validates the installed published artifact; a GitHub Release records the successfully published tag. A tag event is required because release-event workflows are loaded from the default branch, while package work is intentionally integrated through `develop`. Consumers authenticate with least-privilege `read:packages` tokens and pin exact versions.
 
 ## Alternatives
 

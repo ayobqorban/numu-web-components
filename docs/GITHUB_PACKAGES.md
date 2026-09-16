@@ -5,7 +5,7 @@
 Create a classic GitHub personal access token with `read:packages` and repository access. Export it as `NODE_AUTH_TOKEN`, copy `.npmrc.example` to the consumer environment, and run `npm ci`. Never put the token itself in the file.
 
 ```ini
-@numu:registry=https://npm.pkg.github.com
+@ayobqorban:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken=${NODE_AUTH_TOKEN}
 always-auth=true
 ```

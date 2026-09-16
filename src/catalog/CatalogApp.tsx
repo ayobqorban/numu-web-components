@@ -61,7 +61,7 @@ export function CatalogApp() {
     <main className="catalog-shell">
       <header className="catalog-header">
         <div>
-          <p className="catalog-kicker">@numu/web-components</p>
+          <p className="catalog-kicker">@ayobqorban/numu-web-components</p>
           <h1>Development catalog</h1>
           <p>Theme, direction, responsive layout, and block-contract review.</p>
         </div>

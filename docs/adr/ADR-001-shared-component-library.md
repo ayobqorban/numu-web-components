@@ -9,7 +9,7 @@ NUMU Admin previews and independently deployed company websites need the same vi
 
 ## Decision
 
-Maintain `@numu/web-components` as an independent React and TypeScript package. It owns presentation contracts and rendering but no storage, authentication, backend, routing, or publishing workflow.
+Maintain `@ayobqorban/numu-web-components` as an independent React and TypeScript package. It owns presentation contracts and rendering but no storage, authentication, backend, routing, or publishing workflow.
 
 ## Alternatives
 

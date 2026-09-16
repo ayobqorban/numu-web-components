@@ -5,7 +5,7 @@ import {
   TextImage,
   renderWebBlock,
   webBlockRegistry,
-} from "@numu/web-components";
+} from "@ayobqorban/numu-web-components";
 import { Fragment } from "react";
 import styles from "./page.module.css";
 
@@ -137,4 +137,3 @@ export default function HomePage() {
     </main>
   );
 }
-

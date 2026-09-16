@@ -1,6 +1,6 @@
 # NUMU Web Components
 
-`@numu/web-components` is the shared React component library for NUMU Admin previews and independently deployed company websites. It owns presentation contracts, themes, runtime validation, and block rendering; consuming applications own persistence, APIs, authentication, routing, and publishing.
+`@ayobqorban/numu-web-components` is the shared React component library for NUMU Admin previews and independently deployed company websites. It owns presentation contracts, themes, runtime validation, and block rendering; consuming applications own persistence, APIs, authentication, routing, and publishing.
 
 ## Status
 
@@ -8,22 +8,22 @@ The foundation is experimental. Public block keys and schema versions are persis
 
 ## Install
 
-Configure the private `@numu` scope (copy `.npmrc.example`, but never commit a token), then install an exact version:
+Configure the private `@ayobqorban` scope (copy `.npmrc.example`, but never commit a token), then install an exact version:
 
 ```bash
-NODE_AUTH_TOKEN=<token-with-read-packages> npm install @numu/web-components@0.1.1 react react-dom
+NODE_AUTH_TOKEN=<token-with-read-packages> npm install @ayobqorban/numu-web-components@0.1.2 react react-dom
 ```
 
 Import the shared stylesheet once in the consuming application:
 
 ```tsx
-import "@numu/web-components/styles.css";
+import "@ayobqorban/numu-web-components/styles.css";
 ```
 
 Render validated page data through the registry:
 
 ```tsx
-import { renderWebBlock } from "@numu/web-components/registry";
+import { renderWebBlock } from "@ayobqorban/numu-web-components/registry";
 
 const result = renderWebBlock({
   type: "hero.basic",
