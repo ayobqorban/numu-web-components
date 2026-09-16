@@ -29,7 +29,7 @@ Local gates passed:
 - Vite plus declaration build: passed.
 - `git diff --check`: passed.
 
-GitHub Actions is enabled and allows all actions, but the `develop` push run [35098195348](https://github.com/ayobqorban/numu-web-components/actions/runs/35098195348) ended as `startup_failure` with zero jobs. The same account-level symptom existed on all earlier runs, so no repository command or test executed remotely.
+GitHub Actions is enabled and allows all actions, but the `develop` push runs [35098195348](https://github.com/ayobqorban/numu-web-components/actions/runs/35098195348) and [35098692725](https://github.com/ayobqorban/numu-web-components/actions/runs/35098692725) ended as `startup_failure` with zero jobs, including the run after the trigger correction. The same account-level symptom existed on all earlier runs, so no repository command or test executed remotely.
 
 The publishing workflow now triggers on pushed `v*` tags. This is intentional: GitHub loads a `release`-event workflow from the default branch, but this delivery must remain on `develop` and must not merge into `main`.
 
