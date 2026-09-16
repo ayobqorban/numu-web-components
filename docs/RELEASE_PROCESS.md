@@ -13,10 +13,10 @@ Releases are private GitHub Packages releases as decided in [ADR-007](adr/ADR-00
 
 ## Publish
 
-1. Create an annotated `v<version>` tag on the verified `develop` commit and push it.
-2. Create a GitHub Release for that tag.
-3. The release workflow verifies that the tag and `package.json` version match, reruns all gates, packs the consumer test, and publishes to `https://npm.pkg.github.com` with the workflow-scoped `GITHUB_TOKEN`.
-4. Confirm the workflow completed and that GitHub Packages lists the expected version.
+1. Create an annotated `v<version>` tag on the verified `develop` commit and push it. The tag event works without requiring the workflow file on the default `main` branch.
+2. The release workflow verifies that the tag and `package.json` version match, reruns all gates, packs the consumer test, and publishes to `https://npm.pkg.github.com` with the workflow-scoped `GITHUB_TOKEN`.
+3. Confirm the workflow completed and that GitHub Packages lists the expected version.
+4. Create a GitHub Release for the successfully published tag.
 5. With a separate least-privilege `read:packages` token, run `npm run test:consumer:published`.
 6. Complete the manual visual checklist before declaring the version accepted.
 

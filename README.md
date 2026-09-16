@@ -46,7 +46,7 @@ npm run build
 npm run test:consumer
 ```
 
-The Vite development catalog demonstrates two themes, both directions, and responsive layouts. A GitHub Release whose tag matches `v<package.json version>` runs all quality gates and publishes the private package.
+The Vite development catalog demonstrates two themes, both directions, and responsive layouts. Pushing a tag that matches `v<package.json version>` runs all quality gates and publishes the private package; create the corresponding GitHub Release after that workflow succeeds.
 
 ## Principles
 
