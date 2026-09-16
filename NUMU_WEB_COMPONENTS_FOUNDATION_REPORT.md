@@ -131,11 +131,17 @@ The full page builder, NUMU Web screens, backend/API, database, authentication, 
 - Documentation commit: `5a65c7d`
 - Foundation implementation commit: `4c37f06`
 - Tests and CI commit: `1a9cdad`
+- Foundation report commit: `630bbe4`
+- Initial foundation merge on develop: `4552529`
+- CI startup fix commit: `3b4c118`
+- CI bootstrap commit on main: `60e1865`
+- Main CI bootstrap merge: `f2a70a4`
 - Git username: `ayobqorban`
 - Git email: `ayob.qorban@gmail.com`
 - Remote repository: `https://github.com/ayobqorban/numu-web-components.git`
-- Intended push status: feature, develop, and baseline main branches pushed to origin
-- Intended merge status: feature merged into develop with a non-fast-forward merge
+- Push status: feature branches, `develop`, and the baseline `main` branch are pushed to origin
+- Merge status: the library foundation and CI startup fix were merged into `develop` with non-fast-forward merges; only the isolated CI bootstrap was merged into `main`
+- GitHub Actions status: workflow registered as active on the default branch; the final handoff merge triggers the authoritative remote run
 - Tests status: passed
 - Build status: passed
 
