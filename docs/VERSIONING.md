@@ -10,6 +10,6 @@ Block schema versions protect persisted page JSON independently. A breaking bloc
 
 Experimental status allows iteration but does not permit silent corruption of persisted JSON. Every breaking experimental schema change still receives a new schema version before shared environments depend on it.
 
-Consumers must pin an exact package version such as `@ayobqorban/numu-web-components@0.1.2` and commit their lockfile. Do not use `latest`, ranges, or floating tags in production applications.
+Consumers must pin an exact package version such as `@ayobqorban/numu-web-components@0.1.3` and commit their lockfile. Do not use `latest`, ranges, or floating tags in production applications.
 
 To upgrade, read the changelog, install the chosen exact version, run the consumer's typecheck/tests/build, validate representative stored page JSON, compare both themes and directions, and deploy through the consumer's normal promotion flow. Roll back by restoring the previous exact version and lockfile.

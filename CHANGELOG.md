@@ -4,6 +4,21 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/) and S
 
 ## [Unreleased]
 
+## [0.1.3] - 2026-09-16
+
+### Fixed
+
+- Keep the Manual Visual QA catalog controls and long package label within narrow 320–430px viewports.
+
+### Added
+
+- Publish localized editor-field metadata from every Registry definition.
+- Export a serializable `manifest.json` for non-React consumers such as NUMU Backend.
+
+### Verified
+
+- Record Theme A/B, RTL/LTR, mobile, tablet, desktop, keyboard, zoom, contrast, and reduced-motion evidence before NUMU integration.
+
 ## [0.1.2] - 2026-09-16
 
 ### Changed

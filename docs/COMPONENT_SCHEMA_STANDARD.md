@@ -27,3 +27,13 @@ Definitions may expose `migrateProps(fromVersion, toVersion, props)` when a migr
 ## AI and editor use
 
 Schemas, defaults, localized metadata, and finite variants are the structured contract used by editors and future AI page generation. Consumers must not ask AI to emit executable React or JavaScript.
+
+Every definition also exposes an `editor.groups` contract. Groups describe
+localized labels, optional nested objects, defaults, field kinds, constraints,
+and finite options. Consumer page builders must render their property editor
+from this metadata instead of maintaining a second hand-written block map.
+
+`webBlockManifest` is the serializable form of the Registry. The build also
+publishes it as `@ayobqorban/numu-web-components/manifest.json` so non-React
+systems can validate the same keys, schema versions, defaults, and field
+constraints without importing component code.

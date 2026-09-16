@@ -30,5 +30,73 @@ export const textImageDefinition = defineWebBlock({
   propsSchema: textImageSchema,
   defaultProps: textImageDefaults,
   supportedVariants: ["start", "end"],
+  editor: {
+    groups: [
+      {
+        key: "content",
+        label: { ar: "المحتوى", en: "Content" },
+        fields: [
+          { path: "heading", kind: "text", label: { ar: "العنوان", en: "Heading" }, required: true, max: 180 },
+          {
+            path: "description",
+            kind: "textarea",
+            label: { ar: "الوصف", en: "Description" },
+            required: true,
+            max: 1200,
+          },
+        ],
+      },
+      {
+        key: "image",
+        path: "image",
+        label: { ar: "الصورة", en: "Image" },
+        defaultValue: textImageDefaults.image,
+        fields: [
+          { path: "src", kind: "url", label: { ar: "مصدر الصورة", en: "Image source" }, required: true, max: 2048 },
+          { path: "alt", kind: "text", label: { ar: "النص البديل", en: "Alternative text" }, max: 500 },
+          { path: "decorative", kind: "boolean", label: { ar: "صورة زخرفية", en: "Decorative image" } },
+          { path: "width", kind: "number", label: { ar: "العرض", en: "Width" }, min: 1, max: 10000, step: 1 },
+          { path: "height", kind: "number", label: { ar: "الارتفاع", en: "Height" }, min: 1, max: 10000, step: 1 },
+        ],
+      },
+      {
+        key: "action",
+        path: "action",
+        label: { ar: "الإجراء", en: "Action" },
+        optional: true,
+        defaultValue: { href: "#approach", label: "Our approach" },
+        fields: [
+          { path: "label", kind: "text", label: { ar: "النص", en: "Label" }, required: true, max: 120 },
+          { path: "href", kind: "url", label: { ar: "الرابط", en: "Link" }, required: true, max: 2048 },
+        ],
+      },
+      {
+        key: "presentation",
+        label: { ar: "العرض", en: "Presentation" },
+        fields: [
+          {
+            path: "imagePosition",
+            kind: "select",
+            label: { ar: "موضع الصورة", en: "Image position" },
+            required: true,
+            options: [
+              { value: "start", label: { ar: "البداية", en: "Start" } },
+              { value: "end", label: { ar: "النهاية", en: "End" } },
+            ],
+          },
+          {
+            path: "headingLevel",
+            kind: "select",
+            label: { ar: "مستوى العنوان", en: "Heading level" },
+            required: true,
+            options: [1, 2, 3, 4, 5, 6].map((value) => ({
+              value,
+              label: { ar: `H${value}`, en: `H${value}` },
+            })),
+          },
+        ],
+      },
+    ],
+  },
   component: TextImage,
 });

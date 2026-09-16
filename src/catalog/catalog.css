@@ -31,6 +31,7 @@ body {
 .catalog-header h1,
 .catalog-header p {
   margin-block: 0;
+  overflow-wrap: anywhere;
 }
 
 .catalog-kicker {
@@ -42,13 +43,15 @@ body {
 }
 
 .catalog-controls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  inline-size: min(100%, 30rem);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
 .catalog-controls label {
   display: grid;
+  min-inline-size: 0;
   gap: 0.3rem;
   color: #475569;
   font-size: 0.75rem;
@@ -56,6 +59,8 @@ body {
 }
 
 .catalog-controls select {
+  inline-size: 100%;
+  min-inline-size: 0;
   min-block-size: 2.5rem;
   padding-inline: 0.75rem;
   border: 1px solid #b8c2ce;
@@ -71,6 +76,8 @@ body {
 }
 
 .catalog-preview {
+  inline-size: 100%;
+  min-inline-size: 0;
   overflow: auto;
   margin-inline: auto;
   border: 1px solid #c3ccd5;
@@ -78,6 +85,10 @@ body {
   background: #fff;
   box-shadow: 0 16px 44px rgb(15 23 42 / 14%);
   transition: max-inline-size 180ms ease;
+}
+
+.catalog-preview > .numu-web-theme {
+  min-inline-size: 0;
 }
 
 .catalog-preview.mobile {
@@ -132,8 +143,22 @@ body {
 }
 
 @media (min-width: 48rem) {
+  .catalog-controls {
+    inline-size: auto;
+  }
+
   .catalog-card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 32rem) {
+  .catalog-shell {
+    padding: 0.75rem;
+  }
+
+  .catalog-controls {
+    grid-template-columns: 1fr;
   }
 }
 

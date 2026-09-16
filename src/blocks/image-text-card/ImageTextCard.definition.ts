@@ -30,5 +30,74 @@ export const imageTextCardDefinition = defineWebBlock({
   propsSchema: imageTextCardSchema,
   defaultProps: imageTextCardDefaults,
   supportedVariants: ["elevated", "outlined", "flat"],
+  editor: {
+    groups: [
+      {
+        key: "content",
+        label: { ar: "المحتوى", en: "Content" },
+        fields: [
+          { path: "title", kind: "text", label: { ar: "العنوان", en: "Title" }, required: true, max: 180 },
+          {
+            path: "description",
+            kind: "textarea",
+            label: { ar: "الوصف", en: "Description" },
+            required: true,
+            max: 800,
+          },
+        ],
+      },
+      {
+        key: "image",
+        path: "image",
+        label: { ar: "الصورة", en: "Image" },
+        defaultValue: imageTextCardDefaults.image,
+        fields: [
+          { path: "src", kind: "url", label: { ar: "مصدر الصورة", en: "Image source" }, required: true, max: 2048 },
+          { path: "alt", kind: "text", label: { ar: "النص البديل", en: "Alternative text" }, max: 500 },
+          { path: "decorative", kind: "boolean", label: { ar: "صورة زخرفية", en: "Decorative image" } },
+          { path: "width", kind: "number", label: { ar: "العرض", en: "Width" }, min: 1, max: 10000, step: 1 },
+          { path: "height", kind: "number", label: { ar: "الارتفاع", en: "Height" }, min: 1, max: 10000, step: 1 },
+        ],
+      },
+      {
+        key: "action",
+        path: "action",
+        label: { ar: "الإجراء", en: "Action" },
+        optional: true,
+        defaultValue: { href: "#details", label: "View details" },
+        fields: [
+          { path: "label", kind: "text", label: { ar: "النص", en: "Label" }, required: true, max: 120 },
+          { path: "href", kind: "url", label: { ar: "الرابط", en: "Link" }, required: true, max: 2048 },
+        ],
+      },
+      {
+        key: "presentation",
+        label: { ar: "العرض", en: "Presentation" },
+        fields: [
+          {
+            path: "variant",
+            kind: "select",
+            label: { ar: "النمط", en: "Variant" },
+            required: true,
+            options: [
+              { value: "elevated", label: { ar: "بارز", en: "Elevated" } },
+              { value: "outlined", label: { ar: "محدد", en: "Outlined" } },
+              { value: "flat", label: { ar: "مسطح", en: "Flat" } },
+            ],
+          },
+          {
+            path: "headingLevel",
+            kind: "select",
+            label: { ar: "مستوى العنوان", en: "Heading level" },
+            required: true,
+            options: [1, 2, 3, 4, 5, 6].map((value) => ({
+              value,
+              label: { ar: `H${value}`, en: `H${value}` },
+            })),
+          },
+        ],
+      },
+    ],
+  },
   component: ImageTextCard,
 });

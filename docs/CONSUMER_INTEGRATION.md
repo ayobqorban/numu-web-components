@@ -5,7 +5,7 @@
 Configure GitHub Packages as described in [GITHUB_PACKAGES.md](GITHUB_PACKAGES.md), then pin the exact library version alongside a compatible React runtime:
 
 ```bash
-npm install --save-exact @ayobqorban/numu-web-components@0.1.2
+npm install --save-exact @ayobqorban/numu-web-components@0.1.3
 ```
 
 Import `@ayobqorban/numu-web-components/styles.css` exactly once from the application's global layout. Import components and common contracts from the package root; registry-only code may use `@ayobqorban/numu-web-components/registry`, and theme utilities may use `@ayobqorban/numu-web-components/theme`.

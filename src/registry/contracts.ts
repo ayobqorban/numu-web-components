@@ -4,6 +4,38 @@ import type { LocalizedText } from "../types/localized-text";
 
 export type WebBlockStatus = "experimental" | "stable" | "deprecated";
 
+export type WebBlockEditorFieldKind = "text" | "textarea" | "url" | "number" | "boolean" | "select";
+
+export interface WebBlockEditorOption {
+  value: string | number;
+  label: LocalizedText;
+}
+
+export interface WebBlockEditorField {
+  path: string;
+  kind: WebBlockEditorFieldKind;
+  label: LocalizedText;
+  helpText?: LocalizedText;
+  required?: boolean;
+  min?: number;
+  max?: number;
+  step?: number;
+  options?: readonly WebBlockEditorOption[];
+}
+
+export interface WebBlockEditorGroup {
+  key: string;
+  path?: string;
+  label: LocalizedText;
+  optional?: boolean;
+  defaultValue?: Readonly<Record<string, unknown>>;
+  fields: readonly WebBlockEditorField[];
+}
+
+export interface WebBlockEditorContract {
+  groups: readonly WebBlockEditorGroup[];
+}
+
 export interface WebBlockDefinition<TProps extends object = object> {
   key: string;
   version: number;
@@ -14,6 +46,7 @@ export interface WebBlockDefinition<TProps extends object = object> {
   propsSchema: z.ZodType<TProps>;
   defaultProps: TProps;
   supportedVariants: readonly string[];
+  editor: WebBlockEditorContract;
   component: ComponentType<TProps>;
   migrateProps?: (fromVersion: number, toVersion: number, props: unknown) => unknown;
 }
@@ -65,5 +98,22 @@ export function defineWebBlock<TProps extends object>(
   return Object.freeze({
     ...definition,
     supportedVariants: Object.freeze([...definition.supportedVariants]),
+    editor: Object.freeze({
+      groups: Object.freeze(
+        definition.editor.groups.map((group) =>
+          Object.freeze({
+            ...group,
+            fields: Object.freeze(
+              group.fields.map((field) =>
+                Object.freeze({
+                  ...field,
+                  options: field.options ? Object.freeze([...field.options]) : undefined,
+                }),
+              ),
+            ),
+          }),
+        ),
+      ),
+    }),
   });
 }

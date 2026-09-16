@@ -11,7 +11,7 @@ The foundation is experimental. Public block keys and schema versions are persis
 Configure the private `@ayobqorban` scope (copy `.npmrc.example`, but never commit a token), then install an exact version:
 
 ```bash
-NODE_AUTH_TOKEN=<token-with-read-packages> npm install @ayobqorban/numu-web-components@0.1.2 react react-dom
+NODE_AUTH_TOKEN=<token-with-read-packages> npm install @ayobqorban/numu-web-components@0.1.3 react react-dom
 ```
 
 Import the shared stylesheet once in the consuming application:
@@ -31,6 +31,11 @@ const result = renderWebBlock({
   props: { title: "Build with confidence", description: "Shared, validated UI." },
 });
 ```
+
+Registry consumers can build a property editor from `webBlockManifest`.
+Backend consumers may read the equivalent serializable contract from
+`@ayobqorban/numu-web-components/manifest.json`; neither consumer should
+maintain a separate manual block catalog.
 
 See [docs/CONSUMER_INTEGRATION.md](docs/CONSUMER_INTEGRATION.md) for authentication and version pinning, [docs/INTEGRATION_GUIDE.md](docs/INTEGRATION_GUIDE.md) for usage examples, and [docs/COMPONENT_REGISTRY.md](docs/COMPONENT_REGISTRY.md) for supported contracts.
 

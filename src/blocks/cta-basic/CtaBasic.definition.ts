@@ -25,5 +25,70 @@ export const ctaBasicDefinition = defineWebBlock({
   propsSchema: ctaBasicSchema,
   defaultProps: ctaBasicDefaults,
   supportedVariants: ["start", "center"],
+  editor: {
+    groups: [
+      {
+        key: "content",
+        label: { ar: "المحتوى", en: "Content" },
+        fields: [
+          { path: "title", kind: "text", label: { ar: "العنوان", en: "Title" }, required: true, max: 180 },
+          {
+            path: "description",
+            kind: "textarea",
+            label: { ar: "الوصف", en: "Description" },
+            required: true,
+            max: 800,
+          },
+        ],
+      },
+      {
+        key: "primaryAction",
+        path: "primaryAction",
+        label: { ar: "الإجراء الأساسي", en: "Primary action" },
+        defaultValue: { href: "#get-started", label: "Get started" },
+        fields: [
+          { path: "label", kind: "text", label: { ar: "النص", en: "Label" }, required: true, max: 120 },
+          { path: "href", kind: "url", label: { ar: "الرابط", en: "Link" }, required: true, max: 2048 },
+        ],
+      },
+      {
+        key: "secondaryAction",
+        path: "secondaryAction",
+        label: { ar: "الإجراء الثانوي", en: "Secondary action" },
+        optional: true,
+        defaultValue: { href: "#documentation", label: "Read documentation" },
+        fields: [
+          { path: "label", kind: "text", label: { ar: "النص", en: "Label" }, required: true, max: 120 },
+          { path: "href", kind: "url", label: { ar: "الرابط", en: "Link" }, required: true, max: 2048 },
+        ],
+      },
+      {
+        key: "presentation",
+        label: { ar: "العرض", en: "Presentation" },
+        fields: [
+          {
+            path: "alignment",
+            kind: "select",
+            label: { ar: "المحاذاة", en: "Alignment" },
+            required: true,
+            options: [
+              { value: "start", label: { ar: "البداية", en: "Start" } },
+              { value: "center", label: { ar: "الوسط", en: "Center" } },
+            ],
+          },
+          {
+            path: "headingLevel",
+            kind: "select",
+            label: { ar: "مستوى العنوان", en: "Heading level" },
+            required: true,
+            options: [1, 2, 3, 4, 5, 6].map((value) => ({
+              value,
+              label: { ar: `H${value}`, en: `H${value}` },
+            })),
+          },
+        ],
+      },
+    ],
+  },
   component: CtaBasic,
 });

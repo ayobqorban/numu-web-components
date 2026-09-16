@@ -1,5 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+import { webBlockManifest } from "./manifest";
 import { getWebBlockDefinition, renderWebBlock, validateWebBlock, webBlockRegistry } from "./registry";
 
 describe("webBlockRegistry", () => {
@@ -15,6 +16,23 @@ describe("webBlockRegistry", () => {
   it("looks up exact versions", () => {
     expect(getWebBlockDefinition("hero.basic", 1)?.component).toBeDefined();
     expect(getWebBlockDefinition("hero.basic", 2)).toBeUndefined();
+  });
+
+  it("publishes a serializable editor manifest for every registered block", () => {
+    expect(webBlockManifest.schemaVersion).toBe(1);
+    expect(webBlockManifest.blocks).toHaveLength(webBlockRegistry.length);
+
+    for (const block of webBlockManifest.blocks) {
+      expect(block.editor.groups.length).toBeGreaterThan(0);
+      expect(block.editor.groups.flatMap((group) => group.fields).length).toBeGreaterThan(0);
+    }
+
+    const serializedManifest = JSON.stringify(webBlockManifest);
+    expect(serializedManifest).toContain('"schemaVersion":1');
+    expect(serializedManifest).toContain('"key":"hero.basic"');
+    expect(serializedManifest).toContain('"key":"card.image-text"');
+    expect(serializedManifest).toContain('"key":"content.text-image"');
+    expect(serializedManifest).toContain('"key":"cta.basic"');
   });
 
   it.each([
