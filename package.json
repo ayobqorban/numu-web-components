@@ -2,6 +2,14 @@
   "name": "@numu/web-components",
   "version": "0.1.0",
   "description": "Shared, themeable and runtime-validated React website blocks for NUMU.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayobqorban/numu-web-components.git"
+  },
+  "homepage": "https://github.com/ayobqorban/numu-web-components#readme",
+  "bugs": {
+    "url": "https://github.com/ayobqorban/numu-web-components/issues"
+  },
   "type": "module",
   "files": [
     "dist",
@@ -36,6 +44,8 @@
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
+    "test:consumer": "node scripts/test-next-consumer.mjs",
+    "test:consumer:published": "node scripts/test-next-consumer.mjs --published",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
   },
@@ -72,6 +82,7 @@
     "node": ">=20.19.0"
   },
   "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
     "access": "restricted"
   },
   "license": "UNLICENSED"

@@ -40,3 +40,9 @@ React and React DOM are peer dependencies. Components are ordinary React compone
 - `@numu/web-components/registry`: registry and rendering APIs.
 - `@numu/web-components/theme`: theme helpers and token types.
 - `@numu/web-components/styles.css`: required component and default-theme styles.
+
+## Distribution boundary
+
+The repository builds ESM JavaScript, declarations, and one stylesheet into `dist/`. GitHub Packages is the private package registry; consumers install a pinned version at build time and never depend on this repository's source tree. React and React DOM stay external peer dependencies, so the host supplies one shared runtime.
+
+The `examples/next-consumer` fixture is copied to a temporary directory for acceptance testing. It installs the packed artifact (or the published artifact), compiles a strict Next.js application, prerenders its page, exercises the public registry, and checks the resolved React dependency graph.

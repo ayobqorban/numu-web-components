@@ -4,10 +4,10 @@ The code registry is the machine-readable source of truth for discovery, validat
 
 | Key | Version | Component | Status | Category | Since | Notes |
 | --- | ---: | --- | --- | --- | --- | --- |
-| `hero.basic` | 1 | `HeroBasic` | experimental | hero | unreleased | Optional actions and image |
-| `card.image-text` | 1 | `ImageTextCard` | experimental | card | unreleased | Surface card variants |
-| `content.text-image` | 1 | `TextImage` | experimental | content | unreleased | Logical image position |
-| `cta.basic` | 1 | `CtaBasic` | experimental | cta | unreleased | One required action |
+| `hero.basic` | 1 | `HeroBasic` | experimental | hero | 0.1.0 | Optional actions and image |
+| `card.image-text` | 1 | `ImageTextCard` | experimental | card | 0.1.0 | Surface card variants |
+| `content.text-image` | 1 | `TextImage` | experimental | content | 0.1.0 | Logical image position |
+| `cta.basic` | 1 | `CtaBasic` | experimental | cta | 0.1.0 | One required action |
 
 ## Public API
 
@@ -17,3 +17,5 @@ The code registry is the machine-readable source of truth for discovery, validat
 - `renderWebBlock(input, options?)`: safe validation and rendering result.
 
 Registry definitions contain key, version, category, status, localized labels and descriptions, schema, defaults, variants, component, and optional migration metadata. Duplicate key/version pairs fail during registry construction.
+
+Published consumers may import these APIs from either the root entry point or the focused `/registry` entry point. The release acceptance fixture verifies both declarations and runtime behavior from the installed artifact, including invalid props, unknown keys, and unsupported versions.

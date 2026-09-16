@@ -8,3 +8,5 @@
 - Review every dependency for size, SSR impact, maintenance, and license.
 
 The initial quality gate inspects the built output and prevents accidental React bundling. A numeric bundle budget may be added after the first published baseline.
+
+The Next.js consumer acceptance test also runs `npm ls` for the package, React, and React DOM. A release is rejected if the package introduces an additional React installation rather than reusing the consumer's peer dependency.

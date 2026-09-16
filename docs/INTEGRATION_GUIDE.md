@@ -1,5 +1,7 @@
 # Integration guide
 
+For private-registry authentication, exact version pinning, CI, and upgrade instructions, first read [CONSUMER_INTEGRATION.md](CONSUMER_INTEGRATION.md).
+
 ## NUMU Admin
 
 Import the registry to list available blocks, use localized metadata and defaults to seed editor state, and validate every edit through the block schema. Preview with `renderWebBlock` so editor and production use the same implementation. Store `{ id, type, version, props }`; do not store React code.
