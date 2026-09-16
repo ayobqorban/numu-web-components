@@ -4,6 +4,12 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/) and S
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-09-16
+
+### Fixed
+
+- Trigger private package publication from version-tag pushes so releases can remain integrated through `develop` without requiring the workflow on the default branch.
+
 ## [0.1.0] - 2026-09-16
 
 ### Added

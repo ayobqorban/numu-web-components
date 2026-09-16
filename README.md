@@ -11,7 +11,7 @@ The foundation is experimental. Public block keys and schema versions are persis
 Configure the private `@numu` scope (copy `.npmrc.example`, but never commit a token), then install an exact version:
 
 ```bash
-NODE_AUTH_TOKEN=<token-with-read-packages> npm install @numu/web-components@0.1.0 react react-dom
+NODE_AUTH_TOKEN=<token-with-read-packages> npm install @numu/web-components@0.1.1 react react-dom
 ```
 
 Import the shared stylesheet once in the consuming application:
