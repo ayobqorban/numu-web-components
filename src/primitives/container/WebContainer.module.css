@@ -1,0 +1,15 @@
+.container {
+  box-sizing: border-box;
+  inline-size: min(100% - 2rem, var(--numu-web-container-max));
+  margin-inline: auto;
+}
+
+.narrow {
+  max-inline-size: 48rem;
+}
+
+@media (min-width: 48rem) {
+  .container {
+    inline-size: min(100% - 4rem, var(--numu-web-container-max));
+  }
+}

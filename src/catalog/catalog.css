@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color: #172033;
+  background: #e8edf2;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.catalog-shell {
+  min-block-size: 100vh;
+  padding: 1.25rem;
+}
+
+.catalog-header {
+  display: flex;
+  max-inline-size: 90rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: end;
+  justify-content: space-between;
+  margin-inline: auto;
+  margin-block-end: 1.25rem;
+}
+
+.catalog-header h1,
+.catalog-header p {
+  margin-block: 0;
+}
+
+.catalog-kicker {
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.catalog-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.catalog-controls label {
+  display: grid;
+  gap: 0.3rem;
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.catalog-controls select {
+  min-block-size: 2.5rem;
+  padding-inline: 0.75rem;
+  border: 1px solid #b8c2ce;
+  border-radius: 0.5rem;
+  color: #172033;
+  background: #fff;
+  font: inherit;
+}
+
+.catalog-controls select:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.catalog-preview {
+  overflow: auto;
+  margin-inline: auto;
+  border: 1px solid #c3ccd5;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 16px 44px rgb(15 23 42 / 14%);
+  transition: max-inline-size 180ms ease;
+}
+
+.catalog-preview.mobile {
+  max-inline-size: 23.5rem;
+}
+
+.catalog-preview.tablet {
+  max-inline-size: 48rem;
+}
+
+.catalog-preview.desktop {
+  max-inline-size: 90rem;
+}
+
+.catalog-card-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.theme-a {
+  --numu-web-color-primary: #166534;
+  --numu-web-color-primary-foreground: #ffffff;
+  --numu-web-color-secondary: #dcfce7;
+  --numu-web-color-secondary-foreground: #14532d;
+  --numu-web-color-accent: #bbf7d0;
+  --numu-web-color-accent-foreground: #14532d;
+  --numu-web-color-background: #ffffff;
+  --numu-web-color-foreground: #14251a;
+  --numu-web-color-surface: #f2faf4;
+  --numu-web-color-surface-foreground: #14251a;
+  --numu-web-color-muted: #dce9df;
+  --numu-web-color-muted-foreground: #476151;
+  --numu-web-color-border: #b8d0be;
+  --numu-web-color-ring: #15803d;
+}
+
+.theme-b {
+  --numu-web-color-primary: #1d4ed8;
+  --numu-web-color-primary-foreground: #ffffff;
+  --numu-web-color-secondary: #dbeafe;
+  --numu-web-color-secondary-foreground: #1e3a8a;
+  --numu-web-color-accent: #bfdbfe;
+  --numu-web-color-accent-foreground: #1e3a8a;
+  --numu-web-color-background: #ffffff;
+  --numu-web-color-foreground: #172033;
+  --numu-web-color-surface: #f3f7ff;
+  --numu-web-color-surface-foreground: #172033;
+  --numu-web-color-muted: #dbe5f4;
+  --numu-web-color-muted-foreground: #4b5f7d;
+  --numu-web-color-border: #b8c9e2;
+  --numu-web-color-ring: #2563eb;
+}
+
+@media (min-width: 48rem) {
+  .catalog-card-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .catalog-preview {
+    transition: none;
+  }
+}

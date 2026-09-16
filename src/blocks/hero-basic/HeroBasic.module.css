@@ -1,0 +1,76 @@
+.section {
+  overflow: clip;
+}
+
+.layout {
+  display: grid;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+}
+
+.content {
+  max-inline-size: 42rem;
+}
+
+.center .content {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-block: 0 0.75rem;
+  color: var(--numu-web-color-primary);
+  font-size: var(--numu-web-font-size-sm);
+  font-weight: var(--numu-web-font-weight-bold);
+  letter-spacing: 0.08em;
+  line-height: var(--numu-web-line-height-normal);
+  text-transform: uppercase;
+}
+
+.description {
+  max-inline-size: 38rem;
+  margin-block: 1.25rem 0;
+  color: var(--numu-web-color-muted-foreground);
+  font-size: var(--numu-web-font-size-lg);
+  line-height: var(--numu-web-line-height-relaxed);
+}
+
+.center .description {
+  margin-inline: auto;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-block-start: 1.75rem;
+}
+
+.center .actions {
+  justify-content: center;
+}
+
+.media {
+  overflow: hidden;
+  border-radius: var(--numu-web-radius-xl);
+  background: var(--numu-web-color-muted);
+  box-shadow: var(--numu-web-shadow-lg);
+}
+
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+@media (min-width: 56rem) {
+  .withImage {
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+  }
+
+  .withImage.center {
+    grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.85fr);
+  }
+}
