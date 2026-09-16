@@ -1,0 +1,42 @@
+.card {
+  box-sizing: border-box;
+  overflow: hidden;
+  color: var(--numu-web-color-surface-foreground);
+  border-radius: var(--numu-web-radius-lg);
+  background: var(--numu-web-color-surface);
+  font-family: var(--numu-web-font-sans);
+}
+
+.elevated {
+  box-shadow: var(--numu-web-shadow-md);
+}
+
+.outlined {
+  border: 1px solid var(--numu-web-color-border);
+}
+
+.flat {
+  border-radius: var(--numu-web-radius-md);
+  box-shadow: none;
+}
+
+.image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: var(--numu-web-color-muted);
+}
+
+.content {
+  padding-block: 1.5rem;
+  padding-inline: 1.5rem;
+}
+
+.description {
+  margin-block: 0.75rem 1.25rem;
+  color: var(--numu-web-color-muted-foreground);
+  font-size: var(--numu-web-font-size-md);
+  line-height: var(--numu-web-line-height-relaxed);
+}

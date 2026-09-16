@@ -1,0 +1,33 @@
+.section {
+  box-sizing: border-box;
+  color: var(--numu-web-color-foreground);
+  background: var(--numu-web-color-background);
+  font-family: var(--numu-web-font-sans);
+}
+
+.sm {
+  padding-block: var(--numu-web-section-space-sm);
+}
+
+.md {
+  padding-block: var(--numu-web-section-space-md);
+}
+
+.lg {
+  padding-block: var(--numu-web-section-space-lg);
+}
+
+.background {
+  color: var(--numu-web-color-foreground);
+  background: var(--numu-web-color-background);
+}
+
+.surface {
+  color: var(--numu-web-color-surface-foreground);
+  background: var(--numu-web-color-surface);
+}
+
+.primary {
+  color: var(--numu-web-color-primary-foreground);
+  background: var(--numu-web-color-primary);
+}

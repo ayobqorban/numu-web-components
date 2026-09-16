@@ -1,0 +1,24 @@
+.heading {
+  margin: 0;
+  color: currentColor;
+  font-family: var(--numu-web-font-heading);
+  font-weight: var(--numu-web-font-weight-bold);
+  line-height: var(--numu-web-line-height-tight);
+  text-wrap: balance;
+}
+
+.lg {
+  font-size: var(--numu-web-font-size-lg);
+}
+
+.xl {
+  font-size: var(--numu-web-font-size-xl);
+}
+
+.\32xl {
+  font-size: var(--numu-web-font-size-2xl);
+}
+
+.\33xl {
+  font-size: var(--numu-web-font-size-3xl);
+}
