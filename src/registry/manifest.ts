@@ -1,5 +1,5 @@
 import type { LocalizedText } from "../types/localized-text";
-import type { WebBlockEditorContract, WebBlockStatus } from "./contracts";
+import type { WebBlockEditorContract, WebBlockPlacement, WebBlockStatus } from "./contracts";
 import { webBlockRegistry } from "./registry";
 
 export interface WebBlockManifestEntry {
@@ -11,6 +11,7 @@ export interface WebBlockManifestEntry {
   description: LocalizedText;
   defaultProps: object;
   supportedVariants: readonly string[];
+  placements: readonly WebBlockPlacement[];
   editor: WebBlockEditorContract;
 }
 
@@ -32,6 +33,7 @@ export const webBlockManifest: Readonly<WebBlockManifest> = Object.freeze({
         description: definition.description,
         defaultProps: definition.defaultProps,
         supportedVariants: definition.supportedVariants,
+        placements: definition.placements,
         editor: definition.editor,
       }),
     ),

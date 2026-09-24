@@ -4,6 +4,13 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/) and S
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-09-24
+
+### Added
+
+- Add five versioned header and footer layout blocks.
+- Add explicit placement metadata and consumer-owned resource editor fields.
+
 ## [0.1.3] - 2026-09-16
 
 ### Fixed

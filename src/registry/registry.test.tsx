@@ -4,12 +4,13 @@ import { webBlockManifest } from "./manifest";
 import { getWebBlockDefinition, renderWebBlock, validateWebBlock, webBlockRegistry } from "./registry";
 
 describe("webBlockRegistry", () => {
-  it("contains four unique definitions whose defaults validate", () => {
-    expect(webBlockRegistry).toHaveLength(4);
+  it("contains nine unique definitions whose defaults validate", () => {
+    expect(webBlockRegistry).toHaveLength(9);
     const ids = webBlockRegistry.map((definition) => `${definition.key}@${definition.version}`);
     expect(new Set(ids).size).toBe(ids.length);
     for (const definition of webBlockRegistry) {
       expect(definition.propsSchema.safeParse(definition.defaultProps).success).toBe(true);
+      expect(definition.placements.length).toBeGreaterThan(0);
     }
   });
 
@@ -33,6 +34,7 @@ describe("webBlockRegistry", () => {
     expect(serializedManifest).toContain('"key":"card.image-text"');
     expect(serializedManifest).toContain('"key":"content.text-image"');
     expect(serializedManifest).toContain('"key":"cta.basic"');
+    expect(serializedManifest).toContain('"key":"layout.navigation"');
   });
 
   it.each([

@@ -11,6 +11,7 @@ export type {
   WebBlockEditorGroup,
   WebBlockEditorOption,
   WebBlockInput,
+  WebBlockPlacement,
   WebBlockStatus,
   WebBlockValidationErrorCode,
   WebBlockValidationFailure,

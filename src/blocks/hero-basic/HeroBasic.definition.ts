@@ -25,6 +25,7 @@ export const heroBasicDefinition = defineWebBlock({
   propsSchema: heroBasicSchema,
   defaultProps: heroBasicDefaults,
   supportedVariants: ["start", "center"],
+  placements: ["page"],
   editor: {
     groups: [
       {

@@ -30,6 +30,7 @@ export const imageTextCardDefinition = defineWebBlock({
   propsSchema: imageTextCardSchema,
   defaultProps: imageTextCardDefaults,
   supportedVariants: ["elevated", "outlined", "flat"],
+  placements: ["page"],
   editor: {
     groups: [
       {

@@ -4,6 +4,13 @@ import { ctaBasicDefinition } from "../blocks/cta-basic";
 import { heroBasicDefinition } from "../blocks/hero-basic";
 import { imageTextCardDefinition } from "../blocks/image-text-card";
 import { textImageDefinition } from "../blocks/text-image";
+import {
+  layoutBrandDefinition,
+  layoutHeadingDefinition,
+  layoutIconLinkDefinition,
+  layoutImageDefinition,
+  layoutNavigationDefinition,
+} from "../blocks/layout-elements";
 import type {
   RenderWebBlockOptions,
   RenderWebBlockResult,
@@ -21,7 +28,17 @@ const webBlockInputSchema = z
   })
   .strict();
 
-const definitions = [heroBasicDefinition, imageTextCardDefinition, textImageDefinition, ctaBasicDefinition] as const;
+const definitions = [
+  heroBasicDefinition,
+  imageTextCardDefinition,
+  textImageDefinition,
+  ctaBasicDefinition,
+  layoutBrandDefinition,
+  layoutNavigationDefinition,
+  layoutHeadingDefinition,
+  layoutImageDefinition,
+  layoutIconLinkDefinition,
+] as const;
 
 function definitionId(key: string, version: number): string {
   return `${key}@${version}`;

@@ -4,7 +4,9 @@ import type { LocalizedText } from "../types/localized-text";
 
 export type WebBlockStatus = "experimental" | "stable" | "deprecated";
 
-export type WebBlockEditorFieldKind = "text" | "textarea" | "url" | "number" | "boolean" | "select";
+export type WebBlockEditorFieldKind = "text" | "textarea" | "url" | "number" | "boolean" | "select" | "resource";
+
+export type WebBlockPlacement = "page" | "header" | "footer";
 
 export interface WebBlockEditorOption {
   value: string | number;
@@ -21,6 +23,7 @@ export interface WebBlockEditorField {
   max?: number;
   step?: number;
   options?: readonly WebBlockEditorOption[];
+  resource?: "menu";
 }
 
 export interface WebBlockEditorGroup {
@@ -46,6 +49,7 @@ export interface WebBlockDefinition<TProps extends object = object> {
   propsSchema: z.ZodType<TProps>;
   defaultProps: TProps;
   supportedVariants: readonly string[];
+  placements: readonly WebBlockPlacement[];
   editor: WebBlockEditorContract;
   component: ComponentType<TProps>;
   migrateProps?: (fromVersion: number, toVersion: number, props: unknown) => unknown;
@@ -98,6 +102,7 @@ export function defineWebBlock<TProps extends object>(
   return Object.freeze({
     ...definition,
     supportedVariants: Object.freeze([...definition.supportedVariants]),
+    placements: Object.freeze([...definition.placements]),
     editor: Object.freeze({
       groups: Object.freeze(
         definition.editor.groups.map((group) =>

@@ -1,0 +1,22 @@
+.brand { display: inline-flex; align-items: center; gap: .75rem; color: inherit; text-decoration: none; min-inline-size: 0; }
+.brand > span:last-child { display: grid; gap: .15rem; min-inline-size: 0; }
+.brand strong { font-family: var(--numu-web-font-heading); font-size: var(--numu-web-font-size-lg); line-height: var(--numu-web-line-height-tight); }
+.brand small { color: var(--numu-web-color-muted-foreground); font-size: var(--numu-web-font-size-sm); }
+.stacked { flex-direction: column; text-align: center; }
+.logo { display: block; block-size: 2.75rem; inline-size: auto; object-fit: contain; }
+.brandMark { display: grid; place-items: center; block-size: 2.75rem; inline-size: 2.75rem; flex: none; border-radius: var(--numu-web-radius-lg); background: var(--numu-web-color-primary); color: var(--numu-web-color-primary-foreground); font-weight: var(--numu-web-font-weight-bold); }
+.navigation { display: flex; flex-wrap: wrap; align-items: center; gap: .65rem 1.25rem; margin: 0; padding: 0; list-style: none; }
+.navigation a { color: inherit; text-decoration: none; font-size: var(--numu-web-font-size-sm); }
+.navigation a:hover { color: var(--numu-web-color-primary); }
+.vertical { flex-direction: column; align-items: flex-start; }
+.heading { display: block; margin: 0; color: inherit; font-family: var(--numu-web-font-heading); font-size: var(--numu-web-font-size-lg); font-weight: var(--numu-web-font-weight-semibold); }
+.start { text-align: start; }
+.center { text-align: center; }
+.end { text-align: end; }
+.image { display: block; block-size: auto; inline-size: 100%; object-fit: contain; }
+.iconLink { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-block-size: 2.5rem; padding-inline: .75rem; border: 1px solid transparent; border-radius: var(--numu-web-radius-lg); color: inherit; text-decoration: none; }
+.iconLink svg { block-size: 1.25rem; inline-size: 1.25rem; flex: none; }
+.soft { background: var(--numu-web-color-surface); color: var(--numu-web-color-surface-foreground); }
+.outline { border-color: var(--numu-web-color-border); }
+.plain { padding-inline: .25rem; }
+.srOnly { position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

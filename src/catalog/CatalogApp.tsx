@@ -4,6 +4,7 @@ import { HeroBasic } from "../blocks/hero-basic";
 import { ImageTextCard } from "../blocks/image-text-card";
 import { TextImage } from "../blocks/text-image";
 import { WebContainer, WebSection } from "../primitives";
+import { LayoutCatalogExample } from "./LayoutCatalogExample";
 
 type ThemeName = "theme-a" | "theme-b";
 type Direction = "rtl" | "ltr";
@@ -93,6 +94,7 @@ export function CatalogApp() {
 
       <div className={`catalog-preview ${viewport}`}>
         <div className={`numu-web-theme ${theme}`} dir={direction} lang={direction === "rtl" ? "ar" : "en"}>
+          <LayoutCatalogExample direction={direction} region="header" />
           <HeroBasic
             alignment="start"
             description={copy.description}
@@ -158,6 +160,7 @@ export function CatalogApp() {
               title={copy.ctaTitle}
             />
           </div>
+          <LayoutCatalogExample direction={direction} region="footer" />
         </div>
       </div>
     </main>

@@ -14,7 +14,7 @@ describe("CatalogApp", () => {
     expect(themedRoot).toHaveClass("theme-a");
     expect(themedRoot).toHaveAttribute("dir", "rtl");
     expect(themedRoot).toHaveAttribute("lang", "ar");
-    expect(view.container.querySelectorAll("[data-numu-block]")).toHaveLength(6);
+    expect(view.container.querySelectorAll("[data-numu-block]")).toHaveLength(11);
   });
 
   it("switches to Theme B, English LTR, and mobile width", async () => {

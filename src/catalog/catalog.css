@@ -167,3 +167,14 @@ body {
     transition: none;
   }
 }
+
+.catalog-layout-demo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-block: 1px solid var(--numu-web-color-border);
+  background: var(--numu-web-color-background);
+}

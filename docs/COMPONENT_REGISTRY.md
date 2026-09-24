@@ -9,6 +9,12 @@ The code registry is the machine-readable source of truth for discovery, validat
 | `content.text-image` | 1 | `TextImage` | experimental | content | 0.1.0 | Logical image position |
 | `cta.basic` | 1 | `CtaBasic` | experimental | cta | 0.1.0 | One required action |
 
+| layout.brand | 1 | LayoutBrand | experimental | layout | 0.2.0 | Header/footer brand identity |
+| layout.navigation | 1 | LayoutNavigation | experimental | layout | 0.2.0 | Consumer-resolved reusable menu |
+| layout.heading | 1 | LayoutHeading | experimental | layout | 0.2.0 | Compact layout text |
+| layout.image | 1 | LayoutImage | experimental | layout | 0.2.0 | Linkable layout image |
+| layout.icon-link | 1 | LayoutIconLink | experimental | layout | 0.2.0 | Semantic action icons |
+
 ## Public API
 
 - `webBlockRegistry`: read-only collection of definitions.

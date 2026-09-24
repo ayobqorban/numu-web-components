@@ -25,6 +25,7 @@ export const ctaBasicDefinition = defineWebBlock({
   propsSchema: ctaBasicSchema,
   defaultProps: ctaBasicDefaults,
   supportedVariants: ["start", "center"],
+  placements: ["page"],
   editor: {
     groups: [
       {

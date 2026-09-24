@@ -30,6 +30,7 @@ export const textImageDefinition = defineWebBlock({
   propsSchema: textImageSchema,
   defaultProps: textImageDefaults,
   supportedVariants: ["start", "end"],
+  placements: ["page"],
   editor: {
     groups: [
       {
