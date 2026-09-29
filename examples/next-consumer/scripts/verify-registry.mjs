@@ -5,7 +5,23 @@ import {
   webBlockRegistry,
 } from "@ayobqorban/numu-web-components/registry";
 
-assert.equal(webBlockRegistry.length, 4, "The published registry must contain the four foundation blocks.");
+assert.equal(webBlockRegistry.length, 9, "The published registry must contain the four page blocks and five layout blocks.");
+
+for (const key of [
+  "layout.brand",
+  "layout.navigation",
+  "layout.heading",
+  "layout.image",
+  "layout.icon-link",
+]) {
+  const definition = getWebBlockDefinition(key, 1);
+  assert.ok(definition, `${key}@1 must be available.`);
+  assert.equal(
+    validateWebBlock({ type: key, version: 1, props: definition.defaultProps }).success,
+    true,
+    `${key}@1 defaults must pass runtime validation.`,
+  );
+}
 
 const hero = getWebBlockDefinition("hero.basic", 1);
 assert.ok(hero, "hero.basic@1 must be available.");
